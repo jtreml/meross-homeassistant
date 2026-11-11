@@ -1,3 +1,5 @@
+- Add support for MTS150 thermostat valves, which previously only exposed a battery sensor: `meross_iot` has no class for the `mts150` sub-device type, so it is now registered with the `Mts100v3Valve` class (same `Appliance.Hub.Mts100.*` protocol), giving it climate controls and a temperature sensor (see albertogeniola/MerossIot#420, albertogeniola/meross-homeassistant#405).
+
 # 2.0.0-beta.3 (2026-11-11)
 - Fix `supported_color_modes` on `LightEntityWrapper`/`DiffuserLightEntityWrapper` combining `ColorMode.BRIGHTNESS` with `ColorMode.RGB`/`ColorMode.COLOR_TEMP`, which HA rejects as invalid and refuses to add the entity (affected e.g. the `msl320cpr` LED strip).
 - Migrate `ValveEntityWrapper`/`ThermostatEntityWrapper` to the `native_temperature_unit`/`native_current_temperature`/`native_target_temperature` climate properties, fixing deprecation warnings (old properties are removed in HA 2027.11).
